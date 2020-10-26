@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plant_app/constant.dart';
 
 class Body extends StatelessWidget {
@@ -40,15 +41,23 @@ class Body extends StatelessWidget {
                           color: kPrimaryColor.withOpacity(0.23)),
                     ],
                   ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Search",
-                      hintStyle: TextStyle(
-                        color: kPrimaryColor.withOpacity(0.5),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          onChanged: (value) {},
+                          decoration: InputDecoration(
+                            hintText: "Search",
+                            hintStyle: TextStyle(
+                              color: kPrimaryColor.withOpacity(0.5),
+                            ),
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none,
+                          ),
+                        ),
                       ),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                    ),
+                      SvgPicture.asset("assets/icons/search.svg"),
+                    ],
                   ),
                 ),
               ),
